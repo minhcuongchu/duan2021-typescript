@@ -20,7 +20,6 @@ export interface IBodyError {
   message: string
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export default <T extends {} | []>(args: RequestType): Promise<IApiResponse<T>> => {
   const {
     url,
@@ -161,7 +160,6 @@ export default <T extends {} | []>(args: RequestType): Promise<IApiResponse<T>> 
   return resAxios
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export const instance = <T extends {} | []>(baseURL: string, args: RequestType): Promise<IApiResponse<T>> => {
   const instanceAxios = axios.create({
     baseURL: `${baseURL}`,

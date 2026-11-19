@@ -32,7 +32,7 @@ export type AuthHydration = {
 export default class AuthStore {
   @observable state = STATE.PENDING
   @observable root: RootStore
-  // eslint-disable-next-line @typescript-eslint/ban-types
+
   @persist('object') @observable tokenPayload: Partial<TokenPayload> = {}
   @persist @observable token = null
   @persist('object') @observable auth: Partial<User> = {}
@@ -118,7 +118,7 @@ export default class AuthStore {
     try {
       const res: IApiResponse<IUserResponse> = yield userServices.getCustomerInfo<IUserResponse>(
         this.tokenPayload as TokenPayload,
-        this.token
+        this.token,
       )
       this.state = STATE.DONE
       // this.root.loading = false
