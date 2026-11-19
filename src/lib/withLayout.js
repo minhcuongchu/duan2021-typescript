@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import jQuery from 'jquery'
 
 // import { initJquery } from '../../public/static/js/frontend';
 
@@ -23,6 +22,8 @@ if (process.env.NODE_ENV == 'production') {
 }
 
 if (typeof window !== 'undefined') {
+  // jQuery 4 requires a window with a document, so load it only on the client
+  const jQuery = require('jquery')
   window.jQuery = jQuery
   window.$ = jQuery
   require('bootstrap')

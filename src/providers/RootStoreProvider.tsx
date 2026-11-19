@@ -1,6 +1,5 @@
 import { enableStaticRendering } from 'mobx-react-lite'
 import React, { createContext, ReactNode, useContext } from 'react'
-import { Provider } from 'mobx-react'
 import RootStore, { RootStoreHydration } from '@src/stores/RootStore'
 
 enableStaticRendering(typeof window === 'undefined')
@@ -52,9 +51,5 @@ export default function RootStoreProvider({
   console.log(`🚀 ~ file: RootStoreProvider.tsx ~ hydrationData`, hydrationData)
   const store = initializeStore(hydrationData)
 
-  return (
-    <StoreContext.Provider value={store}>
-      <Provider store={store}>{children}</Provider>
-    </StoreContext.Provider>
-  )
+  return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
 }

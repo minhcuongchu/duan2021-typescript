@@ -27,7 +27,7 @@ export default <T extends {} | []>(args: RequestType): Promise<IApiResponse<T>> 
     options = {
       method: 'get',
       headers: {},
-    },
+    } as AxiosRequestConfig,
   } = args
   let headers = {
     ...options.headers,
@@ -171,7 +171,7 @@ export const instance = <T extends {} | []>(baseURL: string, args: RequestType):
     options = {
       method: 'get',
       headers: {},
-    },
+    } as AxiosRequestConfig,
   } = args
   let headers = {
     ...options.headers,

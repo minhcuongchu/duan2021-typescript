@@ -159,15 +159,11 @@ const NavbarBottomHeader: FC<NavbarBottomHeaderProps> = (props: NavbarBottomHead
               </Nav>
             </Navbar.Collapse>
             <div className="c-search-buy-infor">
-              <Link href="#">
-                <a className="news">
-                  <img src={'/images/kenhcine.gif'} alt="" />
-                </a>
+              <Link href="#" className="news">
+                <img src={'/images/kenhcine.gif'} alt="" />
               </Link>
-              <Link href="#">
-                <a className="buy-tickets">
-                  <img src={'/images/banner/banner-mua-ve-ngay.png'} alt="" />
-                </a>
+              <Link href="#" className="buy-tickets">
+                <img src={'/images/banner/banner-mua-ve-ngay.png'} alt="" />
               </Link>
             </div>
           </Container>
@@ -252,15 +248,11 @@ const NavbarBottomHeader: FC<NavbarBottomHeaderProps> = (props: NavbarBottomHead
               </Nav>
             </Navbar.Collapse>
             <div className="c-search-buy-infor">
-              <Link href="#">
-                <a className="news">
-                  <img src={'/images/kenhcine.gif'} alt="" />
-                </a>
+              <Link href="#" className="news">
+                <img src={'/images/kenhcine.gif'} alt="" />
               </Link>
-              <Link href="#">
-                <a className="buy-tickets">
-                  <img src={'/images/banner/banner-mua-ve-ngay.png'} alt="" />
-                </a>
+              <Link href="#" className="buy-tickets">
+                <img src={'/images/banner/banner-mua-ve-ngay.png'} alt="" />
               </Link>
             </div>
           </Container>

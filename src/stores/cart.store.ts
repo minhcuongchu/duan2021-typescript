@@ -13,9 +13,9 @@ import { Voucher } from '@src/interfaces/Voucher'
 import { CartType } from '@src/interfaces/enums'
 import { CalculatePriceParams, CreateOrderParams, PayOrderParams } from '@src/interfaces/dto/product.dto'
 import { IApiResponse } from '@src/utils/request'
-import getConfig from 'next/config'
+import Config from '@src/contains/Config'
 
-const { publicRuntimeConfig } = getConfig()
+const { publicRuntimeConfig } = Config
 
 type CartItem = Product | Voucher
 

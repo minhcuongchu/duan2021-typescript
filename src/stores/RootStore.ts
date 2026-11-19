@@ -9,10 +9,7 @@ import ProductStore, { ProductHydration } from './product.store'
 const isClient = typeof window !== 'undefined'
 let hydrate
 if (isClient) {
-  hydrate = create({
-    storage: localStorage,
-    jsonify: true,
-  })
+  hydrate = create({ storage: localStorage, jsonify: true })
 }
 
 export type RootStoreHydration = {

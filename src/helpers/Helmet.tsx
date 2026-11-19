@@ -1,12 +1,12 @@
 import React from 'react'
-import { Helmet, HelmetProps } from 'react-helmet'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
-import getConfig from 'next/config'
+import Config from '@src/contains/Config'
 import i18n from '../locales'
 
-const { publicRuntimeConfig } = getConfig()
+const { publicRuntimeConfig } = Config
 
-interface HelmetHeaderProps extends HelmetProps {
+interface HelmetHeaderProps {
   title?: string
   keywords?: string
   descriptions?: string
@@ -15,7 +15,7 @@ interface HelmetHeaderProps extends HelmetProps {
   url?: string
   image?: string
   favicon?: string
-  children?: Partial<any>
+  children?: React.ReactNode
 }
 
 const HelmetHeader: React.FC<HelmetHeaderProps> = (props: HelmetHeaderProps) => {
@@ -39,29 +39,29 @@ const HelmetHeader: React.FC<HelmetHeaderProps> = (props: HelmetHeaderProps) => 
     description = `${descriptions}`
   }
   return (
-    <>
-      <Helmet htmlAttributes={{ lang: locale }}>
-        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <title>{title || defaultTitle}</title>
-        <meta name="hreflang" content={`${locale}`} />
-        <meta name="keywords" content={`${keyword}`} />
-        <meta name="description" content={`${description}`} />
-        <meta property="og:site_name" content={props.siteName || defaultOGSiteName} />
-        <meta property="og:type" content={props.type || defaultOGType} />
-        <meta property="og:url" content={props.url || defaultUrl} />
-        <meta property="og:title" content={props.title || defaultTitle} />
-        <meta property="og:description" content={`${description}`} />
-        <meta property="og:image" content={props.image || defaultOGImage} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <link rel="canonical" href={props.url || defaultUrl} />
-        <link rel="icon" href={`${props.favicon || favicon}`} />
-        {children}
-      </Helmet>
-    </>
+    <Head>
+      <meta httpEquiv="content-type" content="text/html; charset=UTF-8" key="content-type" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        key="viewport"
+      />
+      <title key="title">{title || defaultTitle}</title>
+      <meta name="hreflang" content={`${locale}`} key="hreflang" />
+      <meta name="keywords" content={`${keyword}`} key="keywords" />
+      <meta name="description" content={`${description}`} key="description" />
+      <meta property="og:site_name" content={props.siteName || defaultOGSiteName} key="og:site_name" />
+      <meta property="og:type" content={props.type || defaultOGType} key="og:type" />
+      <meta property="og:url" content={props.url || defaultUrl} key="og:url" />
+      <meta property="og:title" content={props.title || defaultTitle} key="og:title" />
+      <meta property="og:description" content={`${description}`} key="og:description" />
+      <meta property="og:image" content={props.image || defaultOGImage} key="og:image" />
+      <meta property="og:image:width" content="1200" key="og:image:width" />
+      <meta property="og:image:height" content="630" key="og:image:height" />
+      <link rel="canonical" href={props.url || defaultUrl} key="canonical" />
+      <link rel="icon" href={`${props.favicon || favicon}`} key="icon" />
+      {children}
+    </Head>
   )
 }
 

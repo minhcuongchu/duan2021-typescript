@@ -62,9 +62,7 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
               <li className="nav-item ">
                 {user ? (
                   <Link className="nav-Navlink p-0" href="/user/login">
-                    <a>
-                      <i className="fa fa-sign-out mr-5px" aria-hidden="true"></i>Đăng xuất
-                    </a>
+                    <i className="fa fa-sign-out mr-5px" aria-hidden="true"></i>Đăng xuất
                   </Link>
                 ) : (
                   <NavLink className="nav-Navlink p-0" href="/user/register">

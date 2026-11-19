@@ -24,8 +24,8 @@ const PageError: FC<PageErrorProps> = (props: PageErrorProps) => {
               <div className="c-btn is-back-btn" onClick={() => router.back()}>
                 Quay lại
               </div>
-              <Link href="/">
-                <a className="c-btn">Trở về trang chủ</a>
+              <Link href="/" className="c-btn">
+                Trở về trang chủ
               </Link>
             </div>
           ) : null}
